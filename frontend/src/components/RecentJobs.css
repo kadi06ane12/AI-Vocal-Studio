@@ -1,0 +1,31 @@
+.jobs-card{
+
+    margin-top:30px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.job{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.job:last-child{
+
+    border:none;
+
+}

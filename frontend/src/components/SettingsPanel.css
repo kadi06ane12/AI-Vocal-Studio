@@ -1,0 +1,51 @@
+.settings-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.settings-card h2{
+
+    margin-top:0;
+
+    margin-bottom:25px;
+
+}
+
+.setting{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:20px;
+
+}
+
+.setting label{
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+    color:#374151;
+
+}
+
+.setting select{
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:1px solid #d1d5db;
+
+    font-size:15px;
+
+}

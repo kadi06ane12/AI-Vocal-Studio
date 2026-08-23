@@ -1,0 +1,69 @@
+.loader{
+    width:70px;
+    height:70px;
+
+    margin:0 auto 25px;
+
+    border:8px solid #e5e7eb;
+    border-top:8px solid #3b82f6;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+.processing-card{
+
+    margin-top:30px;
+    padding:25px;
+
+    background:white;
+
+    border-radius:16px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    text-align:center;
+
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:14px;
+
+    background:#e5e7eb;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    margin:20px 0;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #14b8a6,
+        #2563eb
+    );
+
+    transition:.6s;
+
+}
