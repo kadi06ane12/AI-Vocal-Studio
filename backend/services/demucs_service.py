@@ -7,7 +7,7 @@ OUTPUT_FOLDER = "outputs"
 
 def extract_vocals(
     input_path: str,
-    model: str = "mdx_extra"
+    model: str = "mdx_extra",
     output_format: str = "wav",
 ):
     os.makedirs(OUTPUT_FOLDER, exist_ok=True)
