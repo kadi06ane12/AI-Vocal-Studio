@@ -4,7 +4,6 @@ import sys
 
 OUTPUT_FOLDER = "outputs"
 
-
 def extract_vocals(
     input_path: str,
     model: str = "mdx_extra",
