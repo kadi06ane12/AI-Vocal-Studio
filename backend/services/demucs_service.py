@@ -1,4 +1,3 @@
-```python
 import os
 import subprocess
 import sys
@@ -69,4 +68,3 @@ def extract_vocals(
             f"no_vocals.{output_format}",
         ),
     }
-```
