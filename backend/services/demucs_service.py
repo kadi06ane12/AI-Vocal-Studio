@@ -1,5 +1,7 @@
+```python
 import os
 import subprocess
+import sys
 
 OUTPUT_FOLDER = "outputs"
 
@@ -9,11 +11,10 @@ def extract_vocals(
     model: str = "htdemucs",
     output_format: str = "wav",
 ):
-
     os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
     command = [
-        "python",
+        sys.executable,
         "-m",
         "demucs",
         "-n",
@@ -24,7 +25,6 @@ def extract_vocals(
 
     if output_format == "mp3":
         command.append("--mp3")
-
     elif output_format == "flac":
         command.append("--flac")
 
@@ -34,25 +34,23 @@ def extract_vocals(
         input_path,
     ])
 
-  result = subprocess.run(
-    command,
-    capture_output=True,
-    text=True,
-    timeout=600,
-)
+    result = subprocess.run(
+        command,
+        capture_output=True,
+        text=True,
+        timeout=600,
+    )
 
-print("DEMucs return code:", result.returncode, flush=True)
-print("DEMucs stdout:", result.stdout, flush=True)
-print("DEMucs stderr:", result.stderr, flush=True)
+    print("Demucs return code:", result.returncode, flush=True)
+    print("Demucs stdout:", result.stdout, flush=True)
+    print("Demucs stderr:", result.stderr, flush=True)
 
     if result.returncode != 0:
-        raise Exception(result.stderr)
+        raise RuntimeError(result.stderr or result.stdout)
 
     song_name = os.path.splitext(
         os.path.basename(input_path)
     )[0]
-
-    extension = output_format
 
     return {
         "success": True,
@@ -60,14 +58,15 @@ print("DEMucs stderr:", result.stderr, flush=True)
         "format": output_format,
         "vocals": os.path.join(
             OUTPUT_FOLDER,
-            "htdemucs",
+            model,
             song_name,
-            f"vocals.{extension}",
+            f"vocals.{output_format}",
         ),
         "instrumental": os.path.join(
             OUTPUT_FOLDER,
-            "htdemucs",
+            model,
             song_name,
-            f"no_vocals.{extension}",
+            f"no_vocals.{output_format}",
         ),
     }
+```
