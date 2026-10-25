@@ -8,9 +8,7 @@ from routes.download import router as download_router
 
 from logger import logger
 
-logger.info("Upload started")
-logger.info("Processing completed")
-logger.error(str(e))
+logger.info("AI Vocal Studio backend starting")
 
 app = FastAPI(title="AI Vocal Studio API")
 
