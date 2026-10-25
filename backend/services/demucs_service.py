@@ -16,8 +16,10 @@ def extract_vocals(
         sys.executable,
         "-m",
         "demucs",
-        "-n",
+            "-n",
         model,
+        "--shifts",
+        "0",
         "--two-stems",
         "vocals",
     ]
