@@ -34,11 +34,16 @@ def extract_vocals(
         input_path,
     ])
 
-    result = subprocess.run(
-        command,
-        capture_output=True,
-        text=True,
-    )
+  result = subprocess.run(
+    command,
+    capture_output=True,
+    text=True,
+    timeout=600,
+)
+
+print("DEMucs return code:", result.returncode, flush=True)
+print("DEMucs stdout:", result.stdout, flush=True)
+print("DEMucs stderr:", result.stderr, flush=True)
 
     if result.returncode != 0:
         raise Exception(result.stderr)
